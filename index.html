@@ -1,0 +1,107 @@
+<body>
+  <div ng-controller="MainCtrl">
+
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="nav-bar right">
+          <ul class="button-group">
+            <li><a href="#"  data-reveal-id="addModal" class="button">Add</a></li>
+        </ul>
+    </div>
+    <h1>Madeliefjes <small>
+      This our blog. It's awesome.</small></h1>
+      <hr/>
+  </div>
+</div>
+
+<div class="row">
+    <div class="large-9 columns" role="content">
+
+      <article ng-repeat="post in posts">
+
+
+        <i class="fi-x icon-medium"></i>
+
+        <h3><a href="#">[[post.title]]</a></h3>
+        <h6>Written by <a href="#">[[post.author]]</a> on [[post.createdAt]].</h6>
+        <div class="row">
+          <div class="large-6 columns">
+            <p>[[post.content]]</p>
+        </div>
+        <div class="large-6 columns">
+            <img ng-src="http://placekitten.com/g/[[getRandomInt(200,600)]]/[[getRandomInt(200,600)]]"/>
+        </div>
+    </div>
+
+    <hr/>
+</article>
+
+</div>
+<aside class="large-3 columns">
+  <h5>Categories</h5>
+  <ul class="side-nav">
+    <li><a href="#">News</a></li>
+    <li><a href="#">Code</a></li>
+    <li><a href="#">Design</a></li>
+    <li><a href="#">Fun</a></li>
+    <li><a href="#">Weasels</a></li>
+</ul>
+<div class="panel">
+    <h5>Featured</h5>
+    <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
+    <a href="#">Read More →</a>
+</div>
+</aside>
+</div>
+
+<footer class="row">
+    <div class="large-12 columns">
+      <hr/>
+      <div class="row">
+        <div class="large-6 columns">
+          <p>© Copyright no one at all. Go to town.</p>
+      </div>
+      <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+        </ul>
+    </div>
+</div>
+</div>
+</footer>
+
+<div id="addModal" class="reveal-modal" data-reveal>
+  <h2>Awesome! Add a new blogpost.</h2>
+  <form>
+      <div class="row">
+        <div class="large-6 columns">
+          <label>Title
+            <input type="text" ng-model="newBlog.title" placeholder="Blogpost title" />
+        </label>
+    </div>
+    <div class="large-6 columns">
+      <label>Author
+          <input type="text" ng-model="newBlog.author" placeholder="Blogpost author" />
+      </label>
+  </div>
+</div>
+<div class="row">
+    <div class="large-12 columns">
+      <label>Content
+        <textarea ng-model="newBlog.content" placeholder="Blogpost content"></textarea>
+    </label>
+</div>
+</div>
+<div class="row">
+<span class="button" ng-click="addBlogPost()">Submit</span>
+</div>
+
+<a class="close-reveal-modal">&#215;</a>
+</form>
+</div>
+
+</div>
+</body>
