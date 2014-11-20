@@ -28,7 +28,7 @@ $ meteor add jquery
 
 Start Meteor
 ```sh
-$ meteor start
+$ meteor run
 ```
 
 ### Packages
