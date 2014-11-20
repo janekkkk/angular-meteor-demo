@@ -4,7 +4,7 @@ This is a demo blog to demonstrate the awesome coorperation between Angular and 
 
 ### Installation
 
-Fisrst you need to download Meteor. Only for Linux and OSX.
+First you need to download Meteor. Only for Linux and OSX.
 
 ```sh
 $ curl https://install.meteor.com | /bin/sh
