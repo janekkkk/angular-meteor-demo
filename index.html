@@ -42,11 +42,7 @@
 <aside class="large-3 columns">
   <h5>Categories</h5>
   <ul class="side-nav">
-    <li><a href="#">News</a></li>
-    <li><a href="#">Code</a></li>
-    <li><a href="#">Design</a></li>
-    <li><a href="#">Fun</a></li>
-    <li><a href="#">Weasels</a></li>
+    <li ng-repeat="category in categories"><a href="#">[[category.name]]</a></li>
 </ul>
 <div class="panel">
     <h5>Featured</h5>
@@ -65,10 +61,7 @@
       </div>
       <div class="large-6 columns">
           <ul class="inline-list right">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
+            <li><a href="#"  data-reveal-id="addModal" ng-click="openModal()">Add</a></li>
         </ul>
     </div>
 </div>
@@ -79,14 +72,25 @@
   <h2>Awesome! Add a new blogpost.</h2>
   <form>
       <div class="row">
+          <div class="large-12 columns">
+              <label>Title
+                <input type="text" ng-model="newBlog.title" placeholder="Blogpost title" />
+            </label>
+        </div>
+    </div>
+    <div class="row">
         <div class="large-6 columns">
-          <label>Title
-            <input type="text" ng-model="newBlog.title" placeholder="Blogpost title" />
+          <label>Author
+            <select ng-model="newBlog.author">
+                <option ng-repeat="author in authors" value="[[author.name]]">[[author.name]]</option>
+            </select>
         </label>
     </div>
     <div class="large-6 columns">
-      <label>Author
-          <input type="text" ng-model="newBlog.author" placeholder="Blogpost author" />
+        <label>Category
+            <select ng-model="newBlog.category">
+              <option ng-repeat="category in categories" value="[[category.name]]">[[category.name]]</option>
+          </select>
       </label>
   </div>
 </div>
