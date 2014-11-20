@@ -20,9 +20,14 @@ var inArray = function(item, array){
 app.controller("MainCtrl", ['$scope', '$collection', function($scope, $collection){
 
   $scope.newBlog = {};
+  $scope.filterCategory = "";
   $collection(Posts).bind($scope, 'posts', true, true);
   $collection(Authors).bind($scope, 'authors', true, true);
   $collection(Categories).bind($scope, 'categories', true, true);
+
+  $scope.selectCategory = function(category){
+    $scope.filterCategory = category.name;
+  }
 
   $scope.openModal = function(){
     $('#addModal').foundation('reveal', 'open');
