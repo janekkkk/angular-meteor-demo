@@ -24,6 +24,10 @@ $ meteor add fourseven:scss
 $ meteor add matthew:foundation5-sass
 $ meteor add underscore
 $ meteor add jquery
+$ meteor add urigo:angular-ui-router
+$ meteor remove insecure
+$ meteor add accounts-password
+$ meteor add accounts-ui
 ```
 
 Start Meteor
