@@ -1,0 +1,119 @@
+<body>
+  <div ng-controller="MainCtrl">
+
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="nav-bar right">
+          <ul class="button-group">
+            <li class="button"><meteor-include src="loginButtons"></meteor-include></li>
+            <li><a href="#"  data-reveal-id="addModal" class="button" ng-click="openModal()">Add</a></li>
+
+        </ul>
+    </div>
+    <h1>Madeliefjes <small>
+      This our blog. It's awesome.</small></h1>
+      <hr/>
+  </div>
+</div>
+
+<div class="row">
+    <div class="large-9 columns" role="content">
+
+      <article ng-repeat="post in posts | filter:filterCategory">
+        <div class="row">
+            <h3 class="large-11 columns"><a href="#">[[post.title]]</a></h3>
+            <span class="fi-x icon-medium large-1 columns right" ng-click="removeBlogPost(post)"></span>
+        </div>
+        <h6>Written by <a href="#">[[post.author]]</a> on [[post.createdAt]]</h6>
+
+        <div class="row" ng-if="post.category === 'Cats'">
+          <div class="large-6 columns">
+            <p>[[post.content]]</p>
+        </div>
+        <div class="large-6 columns">
+            <img ng-src="http://placekitten.com/g/[[getRandomInt(200,600)]]/[[getRandomInt(200,600)]]"/>
+        </div>
+    </div>
+    <div class="row" ng-if="post.category !== 'Cats'">
+      <div class="large-12 columns">
+        <p>[[post.content]]</p>
+    </div>
+</div>
+
+
+<hr/>
+</article>
+
+</div>
+<aside class="large-3 columns">
+  <h5 ng-click="selectCategory()">Categories</h5>
+  <ul class="side-nav">
+    <li ng-repeat="category in categories" ng-click="selectCategory(category)"><a href="#">[[category.name]]</a></li>
+</ul>
+<div class="panel">
+    <h5>Featured</h5>
+    <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
+    <a href="#">Read More →</a>
+</div>
+</aside>
+</div>
+
+<footer class="row">
+    <div class="large-12 columns">
+      <hr/>
+      <div class="row">
+        <div class="large-6 columns">
+          <p>© Copyright no one at all. Go to town.</p>
+      </div>
+      <div class="large-6 columns">
+          <ul class="inline-list right">
+            <li><a href="#"  data-reveal-id="addModal" ng-click="openModal()">Add</a></li>
+        </ul>
+    </div>
+</div>
+</div>
+</footer>
+
+<div id="addModal" class="reveal-modal" data-reveal>
+  <h2>Awesome! Add a new blogpost.</h2>
+  <form>
+      <div class="row">
+          <div class="large-12 columns">
+              <label>Title
+                <input type="text" ng-model="newBlog.title" placeholder="Blogpost title" />
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-6 columns">
+          <label>Author
+            <select ng-model="newBlog.author">
+                <option ng-repeat="author in authors" value="[[author.name]]">[[author.name]]</option>
+            </select>
+        </label>
+    </div>
+    <div class="large-6 columns">
+        <label>Category
+            <select ng-model="newBlog.category">
+              <option ng-repeat="category in categories" value="[[category.name]]">[[category.name]]</option>
+          </select>
+      </label>
+  </div>
+</div>
+<div class="row">
+    <div class="large-12 columns">
+      <label>Content
+        <textarea ng-model="newBlog.content" placeholder="Blogpost content"></textarea>
+    </label>
+</div>
+</div>
+<div class="row">
+    <span class="button" ng-click="addBlogPost()">Submit</span>
+</div>
+
+<a class="close-reveal-modal">&#215;</a>
+</form>
+</div>
+
+</div>
+</body>
