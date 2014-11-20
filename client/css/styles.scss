@@ -44,3 +44,25 @@ datalist {
 .left{
     float: left;
 }
+
+#login-buttons .login-button, .accounts-dialog .login-button{
+      background: #008CBA;
+
+      &:hover{
+        background: #007095;
+      }
+}
+
+#login-buttons a{
+     text-decoration: none;
+}
+
+.login-link-text{
+    color: #FFF;
+    text-decoration: none;
+
+    &:hover{
+        color: #efefef;
+        opacity: 1;
+    }
+}

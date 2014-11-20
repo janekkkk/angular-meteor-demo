@@ -1,4 +1,4 @@
-var app = angular.module('demo',['angular-meteor']);
+var app = angular.module('demo',['angular-meteor','ui.router']);
 
 Meteor.startup(function () {
   angular.bootstrap(document, ['demo']);
@@ -26,6 +26,9 @@ app.controller("MainCtrl", ['$scope', '$collection', function($scope, $collectio
   $collection(Categories).bind($scope, 'categories', true, true);
 
   $scope.selectCategory = function(category){
+    if(category === undefined){
+      $scope.filterCategory = "";
+    }
     $scope.filterCategory = category.name;
   }
 

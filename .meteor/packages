@@ -5,7 +5,6 @@
 
 meteor-platform
 autopublish
-insecure
 urigo:angular
 chrismbeckett:fontawesome4
 iain:foundation-icons
@@ -13,4 +12,7 @@ underscore
 fourseven:scss
 matthew:foundation5-sass
 jquery
+urigo:angular-ui-router
+accounts-password
+accounts-ui
 
