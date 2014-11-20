@@ -6,8 +6,10 @@
 meteor-platform
 autopublish
 insecure
-foundation
 urigo:angular
 chrismbeckett:fontawesome4
 iain:foundation-icons
+underscore
+fourseven:scss
+matthew:foundation5-sass
 
