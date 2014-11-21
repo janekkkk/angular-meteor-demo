@@ -18,6 +18,14 @@ Install packages.
 ```sh
 $ cd angular-meteor-demo
 ```
+
+Combined
+```sh
+$ meteor add urigo:angular fourseven:scss matthew:foundation5-sass underscore jquery urigo:angular-ui-router accounts-password accounts-ui accounts-facebook accounts-twitter
+$ meteor remove insecure
+```
+
+Separate
 ```sh
 $ meteor add urigo:angular
 $ meteor add fourseven:scss
