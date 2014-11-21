@@ -28,6 +28,8 @@ $ meteor add urigo:angular-ui-router
 $ meteor remove insecure
 $ meteor add accounts-password
 $ meteor add accounts-ui
+$ meteor add accounts-facebook
+$ meteor add accounts-twitter
 ```
 
 Start Meteor
